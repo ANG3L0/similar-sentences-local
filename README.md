@@ -8,7 +8,7 @@ For example, consider the following sentences where each letter represents a wor
 The input data has 9,397,023 sentences, each one divided by a new line and with the sentence id at the beginning of the line. The zip compressed file size is around 500MB and it's located here. All sentences in the input data are at least 10 words long. A straightforward LSH approach like the one taught in class for jaccard similarity can be used to solve this problem, however it may not necessarily be the faster approach.
 
 Solution:  
-  Tried to use Java but to no avail since using HashMap<String,Integer> is too big and cannot store whole dataset (kept running into garbage collector overhead).  So had to cheat and fuck with sentences.txt (originally huge ass motherfucking file):  
+  Tried to use Java but to no avail since using HashMap\<String,ArrayList\<Integer\>\> is too big and cannot store whole dataset (kept running into garbage collector overhead).  So had to cheat and fuck with sentences.txt (originally huge ass motherfucking file):  
 
   ```
   cut -d' ' -f2- sentences.txt | sort | uniq -c > post
