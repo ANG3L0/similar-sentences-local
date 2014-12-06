@@ -273,4 +273,4 @@ Solution:
   sys	0m1.124s
   ```  
 
-  So the total algorithm takes about 2 minutes.  Not too shabby.
+  So the total algorithm takes about 2 minutes.  Not too shabby.  One bug took me forever to debug which was .split(' ') includes the newline character, and that needed to be stripped otherwise we undercount.
