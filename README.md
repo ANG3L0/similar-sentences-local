@@ -14,7 +14,7 @@ Solution:
   cut -d' ' -f2- sentences.txt | sort | uniq -c > post
   ```  
 
-  But this postprocessed file STILL wouldn't fit into Java (roughly 50% of it was finished before it farted). So I used Python instead.  This is nice because the post file naturally is a key, value pair of the following form:  
+  This file is about half the size of the original.  But this postprocessed file STILL wouldn't fit into Java (roughly 50% of it was finished before it farted). So I used Python instead.  This is nice because the post file naturally is a key, value pair of the following form:  
 
   > (key,value) -> (#occurences, sentence)  
 
@@ -32,7 +32,7 @@ Solution:
   > (key4,value4) -> (last 5 words + len(sentence)-1, sentence)  
   > (key5,value5) -> (last 5 words + len(sentence)+1, sentence)  
 
-  But it turns out that doesn't really matter becauase candidates of word difference of length 1 seems to be not too common so the 3X memory overhead might not be worth it anyway because we might not do 3X the calculation if we don't.  Now timing this shit we get:  
+  But it turns out that doesn't really matter because candidates of word difference of length 1 seems to be not too common so the 3X memory overhead might not be worth it anyway because we might not do 3X the calculation if we don't.  Now timing this shit we get:  
 
   ```
   time cut -d' ' -f2- sentences.txt | sort | uniq -c > blah
